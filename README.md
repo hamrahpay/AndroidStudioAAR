@@ -15,8 +15,7 @@ HamrahPay Android Studio AAR Library
 
 
 ## نحوه اضافه کردن کتابخانه
-نصب کتابخانه بسیار ساده میباشد.
-ابتدا 
+به آپارات همراه پی مراجعه فرمایید 
 
 
 ## نحوه استفاده از کتابخانه
@@ -127,8 +126,4 @@ if (HamrahPay.isPremium(MainActivity.this,yourSKU)) {        // چک کردن خ
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-## توسعه دهنده این کتابخانه
 
-آقای سامان ستاری ملکی
-
-ایمیل :  turkurt656@gmail.com
