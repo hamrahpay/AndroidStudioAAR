@@ -78,6 +78,8 @@ HamrahPay.isPremium(Context context,String sku);
 HamrahPay hamrahPay = new HamrahPay(MainActivity.this);
 // sku : شناسه محصول مصرف کردنی
 // value : یک مقدار عددی صحیح . مثلا عدد 100
+String sku="hp_xxxxxxxxxx";شناسه محصول شما در همراه پی
+Integer value=100;
 hamrahPay.addScore(sku,value,this); // اضافه کردن امتیاز / سکه / بنزین و غیره
 hamrahPay.minusScore(sku,value,this); // کسر کردن امتیاز / سکه / بنزین و غیره
 hamrahPay.getScore(sku,this); // دریافت میزان امتیاز / سکه / بنزین و غیره باقیمانده
@@ -85,7 +87,7 @@ hamrahPay.getScore(sku,this); // دریافت میزان امتیاز / سکه /
 ### دریافت اصلاعات آخرین خرید برنامه 
 این متد زمانی کارایی دارد که محصولات شما نیازمند اشتراک زمانی هستند و با دادن مشخصات کالا اطلاعات آخرین پرداخت مشتری را برمیگرداند که شامل تاریخ آخرین خرید ، تاریخ روز ، شماره رسید پرداخت و غیره میباشد
 ```java
-final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this).sku(sku);
+	final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this).sku(sku);
         Handler handler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
@@ -102,7 +104,7 @@ final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this).sku(sku);
 این متد زمانی مفید است که کد دستگاه کاربر تغییر کرده است و شما نیازمند کد دستگاه کاربر برای ویرایش تراکنش آن میباشید 
 این متد کد دستگاه را به کاربر نمایش میدهد
 ```java
-final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this);
+	final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this);
         Handler handler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
