@@ -3,14 +3,10 @@ HamrahPay Android Studio AAR Library
 # کتابخانه پرداخت درون برنامه ای همراه پی
 
 
-
-
-
-
 ---
 ## ویدئو آموزشی
 
-[آپارات همراه پی](http://www.aparat.com/hamrahpay)
+[مشاهده ویدئو](http://www.aparat.com/v/JPt8K)
 
 
 
