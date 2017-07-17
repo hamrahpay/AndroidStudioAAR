@@ -62,7 +62,58 @@ if (HamrahPay.isPremium(MainActivity.this,yourSKU)) {        // چک کردن خ
 .verificationType(HamrahPay.EMAIL_VERIFICATION)     // حالت دوم
 ```
 
+### تغییر کد دستگاه به کد یکتا دلخواه
+```java
+.setCustomDeviceID(String deviceID) // در پارامتر آن کد دلخواه خود را وارد نمایید.
+```
+### چک کردن وضعیت پرداخت محصولات خریدنی
+```java
+// context : Context
+// sku : شناسه محصول
+HamrahPay.isPremium(Context context,String sku); 
+```
 
+### متدهای مفید برای محصولات مصرف کردنی
+```java
+HamrahPay hamrahPay = new HamrahPay(MainActivity.this);
+// sku : شناسه محصول مصرف کردنی
+// value : یک مقدار عددی صحیح . مثلا عدد 100
+hamrahPay.addScore(sku,value,this); // اضافه کردن امتیاز / سکه / بنزین و غیره
+hamrahPay.minusScore(sku,value,this); // کسر کردن امتیاز / سکه / بنزین و غیره
+hamrahPay.getScore(sku,this); // دریافت میزان امتیاز / سکه / بنزین و غیره باقیمانده
+```
+### دریافت اصلاعات آخرین خرید برنامه 
+این متد زمانی کارایی دارد که محصولات شما نیازمند اشتراک زمانی هستند و با دادن مشخصات کالا اطلاعات آخرین پرداخت مشتری را برمیگرداند که شامل تاریخ آخرین خرید ، تاریخ روز ، شماره رسید پرداخت و غیره میباشد
+```java
+final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this).sku(sku);
+        Handler handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                if (msg.what == 1) {
+                    lastPurchase = hamrahPay.getLastPurchase();
+                    Toast.makeText(MainActivity.this,lastPurchase.toString(),Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+        hamrahPay.LastPurchaseRequest(sku,MainActivity.this,handler);
+```
+
+### نمایش کد دستگاه به کاربر
+این متد زمانی مفید است که کد دستگاه کاربر تغییر کرده است و شما نیازمند کد دستگاه کاربر برای ویرایش تراکنش آن میباشید 
+این متد کد دستگاه را به کاربر نمایش میدهد
+```java
+final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this);
+        Handler handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                if (msg.what == 1) {
+                    Device_ID = HamrahPay.getDeviceID(MainActivity.this);
+                    Toast.makeText(MainActivity.this,Device_ID,Toast.LENGTH_LONG).show();
+                }
+            }
+        };
+        hamrahPay.LastPurchaseRequest(sku,MainActivity.this,handler);
+```
 
 ### کنترل خطا
 در هنگام رویداد خطا میتوانید آنرا بصورت دستی کنترل کنید
