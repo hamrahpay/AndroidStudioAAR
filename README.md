@@ -104,17 +104,7 @@ hamrahPay.getScore(sku,this); // دریافت میزان امتیاز / سکه /
 این متد زمانی مفید است که کد دستگاه کاربر تغییر کرده است و شما نیازمند کد دستگاه کاربر برای ویرایش تراکنش آن میباشید 
 این متد کد دستگاه را به کاربر نمایش میدهد
 ```java
-	final HamrahPay   hamrahPay  = new HamrahPay(MainActivity.this);
-        Handler handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.what == 1) {
-                    Device_ID = HamrahPay.getDeviceID(MainActivity.this);
-                    Toast.makeText(MainActivity.this,Device_ID,Toast.LENGTH_LONG).show();
-                }
-            }
-        };
-        hamrahPay.LastPurchaseRequest(sku,MainActivity.this,handler);
+	String Device_ID = HamrahPay.showDeviceID(MainActivity.this);
 ```
 
 ### کنترل خطا
