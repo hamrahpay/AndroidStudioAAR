@@ -1,3 +1,8 @@
+## اطلاعیه
+لطفا از کتابخانه جدید همراه پی در لینک زیر استفاده نمایید 
+[کتابخانه جدید](https://github.com/hamrahpay/HamrahPay)
+
+
 # AndroidStudioAAR
 HamrahPay Android Studio AAR Library
 # کتابخانه پرداخت درون برنامه ای همراه پی
